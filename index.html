@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-native-smart-badge by grazies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-native-smart-badge</h1>
+      <h2 class="project-tagline">A smart badge for react-native apps</h2>
+      <a href="https://github.com/grazies/react-native-smart-badge" class="btn">View on GitHub</a>
+      <a href="https://github.com/grazies/react-native-smart-badge/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/grazies/react-native-smart-badge/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-native-smart-badge" class="anchor" href="#react-native-smart-badge" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>react-native-smart-badge</h1>
+
+<p><a href="https://www.npmjs.com/package/react-native-smart-badge"><img src="https://img.shields.io/npm/v/react-native-smart-badge.svg" alt="npm"></a>
+<a href="https://www.npmjs.com/package/react-native-smart-badge"><img src="https://img.shields.io/npm/dm/react-native-smart-badge.svg" alt="npm"></a>
+<a href="https://www.npmjs.com/package/react-native-smart-badge"><img src="https://img.shields.io/npm/dt/react-native-smart-badge.svg" alt="npm"></a>
+<a href="https://github.com/react-native-component/react-native-smart-badge/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/react-native-smart-badge.svg" alt="npm"></a></p>
+
+<p>A smart autofit badge for react-native apps, written in JS for cross-platform support.
+It works on iOS and Android.</p>
+
+<p>This component is compatible with React Native 0.25 and newer.</p>
+
+<h2>
+<a id="preview" class="anchor" href="#preview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Preview</h2>
+
+<p><img src="http://cyqresig.github.io/img/react-native-smart-badge-preview-ios-v1.0.7.gif" alt="react-native-smart-badge-preview-ios">
+<img src="http://cyqresig.github.io/img/react-native-smart-badge-preview-android-v1.0.7.gif" alt="react-native-smart-badge-preview-android"></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>npm install react-native-smart-badge --save
+</code></pre>
+
+<h2>
+<a id="full-demo" class="anchor" href="#full-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Full Demo</h2>
+
+<p>see <a href="https://github.com/cyqresig/ReactNativeComponentDemos">ReactNativeComponentDemos</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Install the package from npm with <code>npm install react-native-smart-badge --save</code>.
+Then, require it from your app's JavaScript files with <code>import Badge from 'react-native-smart-badge'</code>.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> React, {
+  <span class="pl-smi">Component</span>,
+} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>
+<span class="pl-k">import</span> {
+  <span class="pl-smi">StyleSheet</span>,
+  <span class="pl-smi">View</span>,
+  <span class="pl-smi">Text</span>,
+} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-native<span class="pl-pds">'</span></span>
+
+<span class="pl-k">import</span> <span class="pl-smi">Badge</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-native-smart-badge<span class="pl-pds">'</span></span>
+<span class="pl-k">import</span> <span class="pl-smi">Button</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-native-smart-button<span class="pl-pds">'</span></span>
+
+<span class="pl-k">export</span> <span class="pl-v">default</span> <span class="pl-k">class</span> <span class="pl-en">NumberBadge</span> <span class="pl-k">extends</span> <span class="pl-e">Component</span> {
+
+    <span class="pl-c">// 构造</span>
+    <span class="pl-en">constructor </span>(<span class="pl-smi">props</span>) {
+        <span class="pl-v">super</span>(props);
+        <span class="pl-c">// 初始状态</span>
+        <span class="pl-v">this</span>.<span class="pl-smi">state</span> <span class="pl-k">=</span> {
+            num1<span class="pl-k">:</span> <span class="pl-c1">2</span>,
+            num2<span class="pl-k">:</span> <span class="pl-c1">15</span>,
+            num3<span class="pl-k">:</span> <span class="pl-c1">328</span>,
+        };
+    }
+
+    <span class="pl-en">render</span> () {
+        <span class="pl-k">return</span> (
+            <span class="pl-k">&lt;</span>View style<span class="pl-k">=</span>{{marginTop<span class="pl-k">:</span> <span class="pl-c1">20</span> <span class="pl-k">+</span> <span class="pl-c1">44</span>, flex<span class="pl-k">:</span> <span class="pl-c1">1</span>, justifyContent<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>, alignItems<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>, }}<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>Badge minWidth<span class="pl-k">=</span>{<span class="pl-c1">18</span>} minHeight<span class="pl-k">=</span>{<span class="pl-c1">18</span>} textStyle<span class="pl-k">=</span>{{color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#fff<span class="pl-pds">'</span></span>,}}<span class="pl-k">&gt;</span>
+                    {<span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">num1</span>}
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>Badge<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>Badge textStyle<span class="pl-k">=</span>{{color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#fff<span class="pl-pds">'</span></span>,}} style<span class="pl-k">=</span>{{marginTop<span class="pl-k">:</span> <span class="pl-c1">10</span>,}}<span class="pl-k">&gt;</span>
+                    {<span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">num2</span>}
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>Badge<span class="pl-k">&gt;</span>
+                <span class="pl-k">&lt;</span>Badge textStyle<span class="pl-k">=</span>{{color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#fff<span class="pl-pds">'</span></span>,}} style<span class="pl-k">=</span>{{marginTop<span class="pl-k">:</span> <span class="pl-c1">10</span>,}}<span class="pl-k">&gt;</span>
+                    {<span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">num3</span>}
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>Badge<span class="pl-k">&gt;</span>
+
+                <span class="pl-k">&lt;</span>Button
+                    touchableType<span class="pl-k">=</span>{<span class="pl-s"><span class="pl-pds">'</span>blur<span class="pl-pds">'</span></span>}
+                    style<span class="pl-k">=</span>{{marginTop<span class="pl-k">:</span> <span class="pl-c1">10</span>, width<span class="pl-k">:</span> <span class="pl-c1">300</span>, justifyContent<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>, height<span class="pl-k">:</span> <span class="pl-c1">40</span>, backgroundColor<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#00AAEF<span class="pl-pds">'</span></span>, borderRadius<span class="pl-k">:</span> <span class="pl-c1">3</span>, borderWidth<span class="pl-k">:</span> <span class="pl-c1">StyleSheet</span>.<span class="pl-smi">hairlineWidth</span>, borderColor<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#00AAEF<span class="pl-pds">'</span></span>, justifyContent<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>center<span class="pl-pds">'</span></span>,}}
+                    textStyle<span class="pl-k">=</span>{{fontSize<span class="pl-k">:</span> <span class="pl-c1">17</span>,  color<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>}}
+                    onPress<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">_addNum</span>}<span class="pl-k">&gt;</span>
+                    click to plus <span class="pl-en">num</span>(点击增加数字)
+                <span class="pl-k">&lt;</span><span class="pl-k">/</span>Button<span class="pl-k">&gt;</span>
+            <span class="pl-k">&lt;</span><span class="pl-k">/</span>View<span class="pl-k">&gt;</span>
+        )
+    }
+
+    <span class="pl-en">_addNum</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> {
+        <span class="pl-v">this</span>.<span class="pl-en">setState</span>({
+            num1<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">num1</span> <span class="pl-k">+</span> <span class="pl-c1">3</span>,
+            num2<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">num2</span> <span class="pl-k">+</span> <span class="pl-c1">30</span>,
+            num3<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">num3</span> <span class="pl-k">+</span> <span class="pl-c1">300</span>,
+        })
+    }
+
+}</pre></div>
+
+<h2>
+<a id="props" class="anchor" href="#props" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Props</h2>
+
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>extraPaddingHorizontal</td>
+<td>number</td>
+<td>Yes</td>
+<td>10</td>
+<td>determines the value of extra horizontal padding when the badge's width is larger than height.</td>
+</tr>
+<tr>
+<td>style</td>
+<td>style</td>
+<td>Yes</td>
+<td></td>
+<td>see <a href="https://facebook.github.io/react-native/docs/style.html">react-native documents</a>
+</td>
+</tr>
+<tr>
+<td>textStyle</td>
+<td>style</td>
+<td>Yes</td>
+<td></td>
+<td>see <a href="https://facebook.github.io/react-native/docs/text.html#style">react-native documents</a>
+</td>
+</tr>
+<tr>
+<td>minHeight</td>
+<td>number</td>
+<td>Yes</td>
+<td></td>
+<td>determines the min-height of badge</td>
+</tr>
+<tr>
+<td>minWidth</td>
+<td>number</td>
+<td>Yes</td>
+<td></td>
+<td>determines the min-width of badge</td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/grazies/react-native-smart-badge">React-native-smart-badge</a> is maintained by <a href="https://github.com/grazies">grazies</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
